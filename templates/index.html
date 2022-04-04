@@ -104,31 +104,13 @@
                 <span style="margin-left: 60px;">Title</span>
                 <span style="margin-right: 5px; float: right;">Difficulty</span>
             </div>
-            <div class="elements" style="background-color: #646464">
-                <span class="problem-status-check"><i class='bx bx-check'></i></span>
-                <span class="problem-title"> Two sum </span>
-                <span class="problem-difficulty"> Easy</span>
-            </div>
-            <div class="elements" style="background-color: #222222;">
-                <span class="problem-status-fail"><i class='bx bx-x'></i></span>
-                <span class="problem-title"> Two sum </span>
-                <span class="problem-difficulty"> Easy</span>
-            </div>
-            <div class="elements" style="background-color: #646464">
-                <span class="problem-status-check"><i class='bx bx-check'></i></span>
-                <span class="problem-title"> Two sum </span>
-                <span class="problem-difficulty"> Easy</span>
-            </div>
-            <div class="elements" style="background-color: #222222">
-                <span class="problem-status-fail"><i class='bx bx-x'></i></span>
-                <span class="problem-title"> Two sum </span>
-                <span class="problem-difficulty"> Easy</span>
-            </div>
-            <div class="elements" style="background-color: #646464">
-                <span class="problem-status-check"><i class='bx bx-check'></i></span>
-                <span class="problem-title"> Two sum </span>
-                <span class="problem-difficulty"> Easy</span>
-            </div>
+            {% for problem in problems %}
+                <div class="elements" style="background-color: #646464">
+                    <span class="problem-status-check"><i class='bx bx-check'></i></span>
+                    <span class="problem-title"> {{problem.title}} </span>
+                    <span class="problem-difficulty"> {{problem.difficulty}} </span>
+                </div>
+            {% endfor %}
         </div>
     </div>
     <div class="statistics">

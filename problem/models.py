@@ -1,13 +1,16 @@
 from django.db import models
 
-
+difficulties = (
+    ('Hard', 'Hard'),
+    ('Easy', 'Easy'),
+    ('Medium', 'Medium'))
 # Create your models here.
 
 class Problem(models.Model):
     title = models.CharField(max_length=30)
     content = models.CharField(max_length=500)
     correct_answer = models.CharField(max_length=50)
-    difficulty = models.IntegerField()
+    difficulty = models.CharField('difficulties', max_length=15, choices=difficulties)
 
 
 class User(models.Model):
