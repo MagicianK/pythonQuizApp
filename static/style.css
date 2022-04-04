@@ -1,0 +1,506 @@
+
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    /* ===== Colors ===== */
+    --body-color: #222222;
+    --sidebar-color: #2e2e2e;
+    --primary-color: #f9af02;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #fff;
+    --text-color: #707070;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+::selection{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+body.dark{
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+}
+.solved-statistics{
+    border-radius: 10%;
+    margin-left: 20%;
+    margin-top: 10%;
+    background-color: #3a3b3c;
+    width: 250px;
+    height: 175px;
+}
+.today-statistics{
+    border-radius: 10%;
+    margin-left: 25%;
+    margin-top: 10%;
+    background-color: #3a3b3c;
+    width: 200px;
+    height: 175px;
+}
+/* (A) PIE CHART */
+.donut {
+    /* (A1) CIRCLE */
+    width: 125px; height: 125px;
+    border-radius: 50%;
+    margin: 5%;
+    /* (A2) SEGMENTS */
+    background: conic-gradient(
+      #e5bb2f 0deg 80deg,
+      #0ec672 80deg 190deg,
+      #fc3d33 190deg 360deg
+    );
+  }
+  
+  /* (B) DONUT "CONVERSION" */
+  /* (B1) SMALLER CIRCLE */
+  .hole {
+    width: 112px; height: 112px;
+    border-radius: 50%;
+    background: #3a3b3c;
+    z-index: 0;
+  }
+  .solved-number{
+    height : 100px;
+    line-height: 20px;
+    vertical-align : middle;
+    text-align : center;
+  }
+  .solved-number span{
+    margin-top: 35%;
+    display : inline-block;
+    vertical-align : middle;
+  }
+  
+  /* (B2) "CONVERT PIE TO DONUT" - CENTER SMALLER CIRCLE */
+  .donut {
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* (C) LEGEND */
+  /* (C1) LEGEND CONTAINER */
+  .legend {
+    float: left;
+    margin-top: 17.5%;
+  }
+  
+  /* (C2) SEGMENTS */
+
+  
+  /* (X) DOES NOT MATTER */
+  * {
+    font-family: arial, sans-serif;
+    box-sizing: border-box;
+  }
+  .problem-status-check{
+    font-size: 30px;
+    margin-top: 10px;
+    float: left;
+    margin-left: 10px;
+    color: #0ec672;
+
+  }
+  .problem-status-fail{
+    font-size: 30px;
+    margin-top: 10px;
+    float: left;
+    margin-left: 10px;
+    color: red;
+  }
+  .problem-title{
+    font-size: 15px;
+    margin-top: 17.5px;
+    margin-left: 90px;
+    float: left;
+  }
+  .problem-difficulty{
+    font-size: 15px;
+    margin-right: 10px;
+    float:right; 
+    margin-top: 17.5px;
+  }
+/* ===== Sidebar ===== */
+ .sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+.sidebar.close{
+    width: 88px;
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: #3b3b3b;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 100px
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: var(--primary-color);}
+
+.elements-containter{
+    padding: 10px;
+}
+.search-box{
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+}
+.search-box input[type=text] {
+    border: none;
+    background-color: #3b3b3b;
+    font-size: 17px;
+  }
+.top-error{
+    padding: 25px;
+}
+.filter-bar{
+    background-color: #222222;
+    width: 1000px;
+    height: 100px;
+}
+.elements {
+    width: 100%;
+    height: 50px;
+    background-color: #FFF;
+}
+
+.statistics {
+    color: #FFF;
+    width: 30%;
+    align-items: center;
+    float: right;
+    height: 100%;
+    background: #222222;
+    overflow: hidden;
+    /* clearfix */
+  }
+
+.right-side {
+    width: 60%;
+    float: left;
+    height: 100%;
+    margin-left: 110px;
+    background: #222222;
+    overflow: hidden;
+    /* clearfix */
+  }
+  
+.right-side:before {
+    content: "";
+    padding-top: 8%;
+    float: left;
+}
+
+/* ===== Reusable code - Here ===== */
+.sidebar li{
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.sidebar header .image,
+.sidebar .icon{
+    min-width: 60px;
+    border-radius: 6px;
+}
+
+.sidebar .icon{
+    min-width: 60px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.sidebar .text,
+.sidebar .icon{
+    color: #fafafa;
+    transition: var(--tran-03);
+}
+
+.sidebar .text{
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+.sidebar.close .text{
+    opacity: 0;
+}
+/* =========================== */
+
+.sidebar header{
+    position: relative;
+}
+
+.sidebar header .image-text{
+    display: flex;
+    align-items: center;
+}
+.sidebar header .logo-text{
+    display: flex;
+    flex-direction: column;
+}
+header .image-text .name {
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+header .image-text .profession{
+    font-size: 16px;
+    margin-top: -2px;
+    display: block;
+}
+
+.sidebar header .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar header .image img{
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+body.dark .sidebar header .toggle{
+    color: var(--text-color);
+}
+
+.sidebar.close .toggle{
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.sidebar .menu{
+    margin-top: 140px;
+}
+
+.sidebar li.search-box{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+.sidebar li.search-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+.sidebar li a{
+    list-style: none;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+}
+
+.sidebar li a:hover{
+    background-color: var(--primary-color);
+}
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text{
+    color: var(--sidebar-color);
+}
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text{
+    color: var(--text-color);
+}
+
+.sidebar .menu-bar{
+    height: calc(100% - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+.menu-bar::-webkit-scrollbar{
+    display: none;
+}
+.sidebar .menu-bar .mode{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    position: relative;
+    transition: var(--tran-05);
+}
+
+.menu-bar .mode .sun-moon{
+    height: 50px;
+    width: 60px;
+}
+
+.mode .sun-moon i{
+    position: absolute;
+}
+.mode .sun-moon i.sun{
+    opacity: 0;
+}
+body.dark .mode .sun-moon i.sun{
+    opacity: 1;
+}
+body.dark .mode .sun-moon i.moon{
+    opacity: 0;
+}
+
+.menu-bar .bottom-content .toggle-switch{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before{
+    left: 20px;
+}
+
+.home{
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+.home .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+}
+
+.sidebar.close ~ .home{
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}
+body.dark .home .text{
+    color: var(--text-color);
+}

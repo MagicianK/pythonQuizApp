@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+  <!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!----======== CSS ======== -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<title>Dashboard Sidebar Menu</title>-->
+    
+</head>
+<body>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    {% load static %}
+                    <img src="{% static 'horse-logo.png' %}" alt="">
+                </span>
+            </div>
+
+
+        </header>
+
+<!-- ================= MENU ================= -->
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bxs-dashboard icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-target-lock icon'></i>
+                            <span class="text nav-text">Goals</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bxs-user-circle icon' ></i>
+                            <span class="text nav-text">Personal page</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+              <!-- ==== LOGOUT ==== -->
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div class="right-side">
+        <div class="filter-bar">
+                <div class="dropdown col">
+                    <button class="dropbtn">Difficulty <i class='bx bxs-chevron-down' ></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Easy</a>
+                        <a href="#">Medium</a>
+                        <a href="#">Hard</a>
+                    </div>
+                </div>
+                <div class="dropdown col">
+                    <button class="dropbtn">Tags <i class='bx bxs-chevron-down'></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Maths</a>
+                        <a href="#">Data structures</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <div class="dropdown col">
+                    <button class="dropbtn">Status <i class='bx bxs-chevron-down'></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Solved</a>
+                        <a href="#">Error</a>
+                        <a href="#">Draft</a>
+                    </div>
+                </div>
+                <div class="search-box col">
+                    <input type="text" placeholder="Search"> 
+                </div>
+        </div>
+        <div class="elements-containter" style="color: #fafafa;">
+            <div class="elements" style="background-color: #222222">
+                <span style="margin-right:10px;margin-left:10px">Status</span>
+                <span style="margin-left: 60px;">Title</span>
+                <span style="margin-right: 5px; float: right;">Difficulty</span>
+            </div>
+            <div class="elements" style="background-color: #646464">
+                <span class="problem-status-check"><i class='bx bx-check'></i></span>
+                <span class="problem-title"> Two sum </span>
+                <span class="problem-difficulty"> Easy</span>
+            </div>
+            <div class="elements" style="background-color: #222222;">
+                <span class="problem-status-fail"><i class='bx bx-x'></i></span>
+                <span class="problem-title"> Two sum </span>
+                <span class="problem-difficulty"> Easy</span>
+            </div>
+            <div class="elements" style="background-color: #646464">
+                <span class="problem-status-check"><i class='bx bx-check'></i></span>
+                <span class="problem-title"> Two sum </span>
+                <span class="problem-difficulty"> Easy</span>
+            </div>
+            <div class="elements" style="background-color: #222222">
+                <span class="problem-status-fail"><i class='bx bx-x'></i></span>
+                <span class="problem-title"> Two sum </span>
+                <span class="problem-difficulty"> Easy</span>
+            </div>
+            <div class="elements" style="background-color: #646464">
+                <span class="problem-status-check"><i class='bx bx-check'></i></span>
+                <span class="problem-title"> Two sum </span>
+                <span class="problem-difficulty"> Easy</span>
+            </div>
+        </div>
+    </div>
+    <div class="statistics">
+        <div class="solved-statistics">
+                <!-- (A) DONUT CHART -->
+                <div class="donut"><div class="hole">
+                    <div class="solved-number">
+                        <span style="font-weight:bold"><span style="font-size:18.0pt; margin: 0%; padding: 0%;">167</span><br> 
+                            <span style="color:#808080; margin: 0%;">solved</span>
+                        </span>
+                    </div>
+                </div></div>
+
+                <!-- (B) LEGEND -->
+                <div class="legend">
+                    <p>100   Medium</p> 
+                    <p>47   Easy </p> 
+                    <p>20   Hard</p>
+                </div>
+        </div>
+        <div class="today-statistics">
+           
+        </div>
+    </div>
+</body>
+</html>
